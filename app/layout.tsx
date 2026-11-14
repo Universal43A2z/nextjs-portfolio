@@ -13,9 +13,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Khent Vincent Amorl — Portfolio",
+  title: "Khent Vincent C. Amor | Security-Focused Full-Stack Developer",
   description:
-    "Cybersecurity & Full-Stack Developer — building secure platforms, CTF challenges, and awareness programs.",
+    "Full-stack developer focused on secure, useful web products. Explore Khent Vincent C. Amor's projects in Next.js, TypeScript, cybersecurity education, and networking.",
+  openGraph: {
+    title: "Khent Vincent C. Amor | Security-Focused Full-Stack Developer",
+    description:
+      "Full-stack developer focused on secure, useful web products, cybersecurity education, and practical engineering.",
+    type: "website",
+    locale: "en_PH",
+  },
+  twitter: {
+    card: "summary",
+    title: "Khent Vincent C. Amor | Full-Stack Developer",
+    description:
+      "Full-stack developer focused on secure, useful web products.",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

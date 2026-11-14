@@ -10,8 +10,14 @@ import { Footer } from "@/components/Footer";
 export default function Home() {
   return (
     <>
+      <a
+        href="#main-content"
+        className="sr-only rounded-md bg-accent px-4 py-2 font-semibold text-[#06211a] focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:not-sr-only"
+      >
+        Skip to content
+      </a>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <About />
         <Experience />

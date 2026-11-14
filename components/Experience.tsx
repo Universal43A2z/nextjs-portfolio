@@ -1,30 +1,37 @@
 export function Experience() {
   const experiences = [
     {
-      role: "Starlink Deployment Team Member",
-      org: "Department of Information and Communications Technology (DICT)",
-      date: "2 months",
-      description:
-        "Installed and configured Starlink WiFi systems in public schools to bring internet access to underserved communities. Handled on-site setup of satellite dishes, routers, and network wiring, ensuring stable connectivity and proper configuration.",
-      tags: ["Networking", "Starlink", "Router Config", "Field Deployment", "Public Schools"],
-    },
-    {
       role: "Freelance Web Developer & IT Support",
       org: "Self-employed",
       date: "2024 – Present",
-      description:
-        "Develop and maintain web applications for clients; collaborated directly with clients to gather and implement requirements. Troubleshot hardware, software, and network issues, wrote technical documentation for non-technical users, and set up Linux systems and development environments.",
-      tags: ["Web Development", "Linux", "IT Support", "Client Work"],
+      details: [
+        "Build and maintain client-facing web applications, working directly with clients to gather requirements and deliver updates.",
+        "Troubleshoot hardware, software, and network issues; configure Linux environments and document solutions for non-technical users.",
+      ],
+      tags: ["Web Development", "Client Work", "Linux", "IT Support"],
+    },
+    {
+      role: "Starlink Deployment Team Member",
+      org: "Department of Information and Communications Technology (DICT)",
+      date: "2-month field deployment",
+      details: [
+        "Installed and configured Starlink connectivity at public schools, including satellite hardware, routers, and network wiring.",
+        "Performed on-site setup and connectivity troubleshooting to support reliable school internet access.",
+      ],
+      tags: ["Networking", "Starlink", "Router Configuration", "Field Deployment"],
     },
   ];
 
   return (
-    <section id="experience" className="border-y border-border bg-bg-alt py-20">
+    <section
+      id="experience"
+      className="scroll-mt-24 border-y border-border bg-bg-alt py-20"
+    >
       <div className="mx-auto max-w-[1080px] px-6">
-        <p className="font-mono text-sm text-accent">{"// experience"}</p>
-        <h2 className="mt-2 mb-9 text-3xl font-extrabold">
-          Work &amp; Field Experience
-        </h2>
+        <p className="mb-3 font-mono text-xs font-semibold tracking-[0.16em] text-accent">
+          EXPERIENCE
+        </p>
+        <h2 className="mb-9 text-3xl font-extrabold">Work experience</h2>
         <div className="grid gap-[18px]">
           {experiences.map((exp) => (
             <article
@@ -36,11 +43,20 @@ export function Experience() {
                   <h3 className="text-lg font-bold">{exp.role}</h3>
                   <p className="mt-1 font-mono text-xs text-accent">{exp.org}</p>
                 </div>
-                <span className="whitespace-nowrap rounded-full border border-border px-3.5 py-1.5 font-mono text-xs text-muted">
+                <span className="rounded-full border border-border px-3.5 py-1.5 font-mono text-xs text-muted">
                   {exp.date}
                 </span>
               </div>
-              <p className="mb-4 text-sm text-muted">{exp.description}</p>
+              <ul className="mb-4 grid gap-2 text-sm leading-relaxed text-muted">
+                {exp.details.map((detail) => (
+                  <li key={detail} className="flex gap-2.5">
+                    <span className="text-accent" aria-hidden="true">
+                      ▸
+                    </span>
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
               <div className="flex flex-wrap gap-2">
                 {exp.tags.map((tag) => (
                   <span

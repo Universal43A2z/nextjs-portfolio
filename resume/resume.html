@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Khent Vincent C. Amor — Résumé</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      :root {
+        color-scheme: light;
+        --ink: #152238;
+        --muted: #4e5d73;
+        --accent: #087f70;
+        --line: #d9e1e9;
+        --soft: #f1f6f7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        background: #fff;
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 9.7pt;
+        line-height: 1.4;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 13mm 14mm 12mm;
+        margin: 0 auto;
+      }
+
+      header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 12mm;
+        padding-bottom: 5mm;
+        border-bottom: 2px solid var(--accent);
+      }
+
+      .eyebrow,
+      h2,
+      .meta,
+      .skills-label {
+        font-family: "Courier New", monospace;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow {
+        margin: 0 0 2mm;
+        color: var(--accent);
+        font-size: 8pt;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 24pt;
+        letter-spacing: -0.04em;
+        line-height: 1.05;
+      }
+
+      .headline {
+        margin: 2mm 0 0;
+        color: var(--muted);
+        font-size: 10pt;
+        font-weight: 600;
+      }
+
+      .contact {
+        min-width: 54mm;
+        color: var(--muted);
+        font-size: 8pt;
+        line-height: 1.65;
+        text-align: right;
+      }
+
+      .contact a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.8fr);
+        gap: 9mm;
+        padding-top: 5mm;
+      }
+
+      section {
+        margin: 0 0 5mm;
+        break-inside: avoid;
+      }
+
+      h2 {
+        display: flex;
+        align-items: center;
+        gap: 2mm;
+        margin: 0 0 2mm;
+        color: var(--accent);
+        font-size: 8.2pt;
+        font-weight: 700;
+      }
+
+      h2::after {
+        height: 1px;
+        flex: 1;
+        background: var(--line);
+        content: "";
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .profile {
+        color: var(--muted);
+      }
+
+      .entry {
+        margin-bottom: 3.5mm;
+        break-inside: avoid;
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 4mm;
+        align-items: baseline;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 9.35pt;
+        line-height: 1.25;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 7.1pt;
+        white-space: nowrap;
+      }
+
+      .organization {
+        margin: 0.5mm 0 1mm;
+        color: var(--accent);
+        font-size: 8pt;
+        font-weight: 700;
+      }
+
+      ul {
+        margin: 1mm 0 0;
+        padding-left: 4mm;
+        color: var(--muted);
+      }
+
+      li {
+        padding-left: 0.5mm;
+        margin: 0.45mm 0;
+      }
+
+      .project {
+        padding: 0 0 2.8mm;
+        margin-bottom: 2.8mm;
+        border-bottom: 1px solid var(--line);
+        break-inside: avoid;
+      }
+
+      .project:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .project-title {
+        display: flex;
+        justify-content: space-between;
+        gap: 3mm;
+        align-items: baseline;
+      }
+
+      .project p {
+        margin-top: 0.8mm;
+        color: var(--muted);
+      }
+
+      .project .project-links {
+        margin-top: 0.8mm;
+        font-size: 7.5pt;
+      }
+
+      .project-links a {
+        color: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .award {
+        color: var(--accent);
+        font-size: 7.5pt;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .skill-group {
+        margin-bottom: 2.6mm;
+      }
+
+      .skill-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .skills-label {
+        display: block;
+        margin-bottom: 0.5mm;
+        color: var(--ink);
+        font-size: 7.2pt;
+        font-weight: 700;
+      }
+
+      .skill-group p,
+      .education p {
+        color: var(--muted);
+      }
+
+      .education {
+        padding: 3mm;
+        background: var(--soft);
+        border-left: 2px solid var(--accent);
+      }
+
+      .education h3 {
+        margin-bottom: 1mm;
+      }
+
+      .footer-note {
+        margin-top: 2mm;
+        color: var(--muted);
+        font-size: 7.4pt;
+      }
+
+      @media screen {
+        body {
+          background: #e8edf2;
+        }
+
+        .page {
+          box-shadow: 0 8px 40px rgb(15 23 42 / 14%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="page">
+      <header>
+        <div>
+          <p class="eyebrow">Security-focused full-stack developer</p>
+          <h1>Khent Vincent C. Amor</h1>
+          <p class="headline">Building secure, useful web products.</p>
+        </div>
+        <div class="contact">
+          <a href="mailto:amorkhentvincent@gmail.com">amorkhentvincent@gmail.com</a><br />
+          0921 352 3734<br />
+          Iloilo City, Philippines<br />
+          <a href="https://github.com/Universal43A2z">github.com/Universal43A2z</a>
+        </div>
+      </header>
+
+      <div class="content">
+        <main>
+          <section>
+            <h2>Profile</h2>
+            <p class="profile">
+              Technology student and freelance developer building full-stack web
+              applications with React/Next.js, Node.js, and PostgreSQL. Combines
+              product delivery with hands-on cybersecurity education and field
+              networking experience. Member of the champion team at the 2026
+              PHINMA AI Builder Workshop.
+            </p>
+          </section>
+
+          <section>
+            <h2>Experience</h2>
+            <div class="entry">
+              <div class="entry-head">
+                <h3>Freelance Web Developer &amp; IT Support</h3>
+                <span class="meta">2024–Present</span>
+              </div>
+              <p class="organization">Self-employed</p>
+              <ul>
+                <li>
+                  Build and maintain client-facing web applications, gathering
+                  requirements directly with clients and delivering updates.
+                </li>
+                <li>
+                  Troubleshoot hardware, software, and network issues; configure
+                  Linux environments and document solutions for non-technical users.
+                </li>
+              </ul>
+            </div>
+            <div class="entry">
+              <div class="entry-head">
+                <h3>Starlink Deployment Team Member</h3>
+                <span class="meta">2-month deployment</span>
+              </div>
+              <p class="organization">
+                Department of Information and Communications Technology (DICT)
+              </p>
+              <ul>
+                <li>
+                  Installed and configured Starlink connectivity, routers, and
+                  network wiring at public schools.
+                </li>
+                <li>
+                  Performed on-site setup and connectivity troubleshooting.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2>Selected projects</h2>
+            <div class="project">
+              <div class="project-title">
+                <h3>Dugtong — OJT Hour Tracker</h3>
+                <span class="award">2026 team champion</span>
+              </div>
+              <p>
+                Team-built OJT platform for student hour logs, coordinator
+                approvals, and printable reports. Built at the PHINMA AI Builder
+                Workshop and deployed with Supabase.
+              </p>
+              <p class="project-links">
+                <a href="https://github.com/Universal43A2z/DugtongOJT">GitHub ↗</a>
+                &nbsp;·&nbsp;
+                <a href="https://dugtong-ojt.vercel.app">Live app ↗</a>
+              </p>
+            </div>
+            <div class="project">
+              <div class="project-title">
+                <h3>F1 STACKMIND Cyber Academy</h3>
+                <span class="meta">8-week program</span>
+              </div>
+              <p>
+                Live cybersecurity mentoring platform with weekly lessons,
+                server-scored timed quizzes, attendance, and mentor review.
+                Built with Next.js and Supabase/PostgreSQL.
+              </p>
+              <p class="project-links">
+                <a href="https://github.com/Universal43A2z/cyber-academy">GitHub ↗</a>
+                &nbsp;·&nbsp;
+                <a href="https://cyber-academy-sooty.vercel.app">Live app ↗</a>
+              </p>
+            </div>
+            <div class="project">
+              <div class="project-title">
+                <h3>Cyber CTF Platform</h3>
+                <span class="meta">58 challenges · 6 categories</span>
+              </div>
+              <p>
+                Designed a hands-on CTF platform with authentication safeguards,
+                downloadable challenges, and a leaderboard admin panel.
+              </p>
+              <p class="project-links">
+                <a href="https://github.com/Universal43A2z/ctf-project">GitHub ↗</a>
+              </p>
+            </div>
+            <div class="project">
+              <div class="project-title">
+                <h3>Workflow Runner</h3>
+                <span class="meta">TypeScript</span>
+              </div>
+              <p>
+                Workflow engine for YAML/JSON definitions, typed steps, an
+                authenticated REST API, Docker, and Vitest tests.
+              </p>
+              <p class="project-links">
+                <a href="https://github.com/Universal43A2z/vanilla-workflow-edito">GitHub ↗</a>
+              </p>
+            </div>
+          </section>
+        </main>
+
+        <aside>
+          <section>
+            <h2>Technical skills</h2>
+            <div class="skill-group">
+              <span class="skills-label">Full-stack</span>
+              <p>TypeScript, JavaScript, React, Next.js, Node.js, Express, REST APIs</p>
+            </div>
+            <div class="skill-group">
+              <span class="skills-label">Data &amp; platform</span>
+              <p>PostgreSQL, Supabase, SQL, Row-Level Security, Docker, Vercel</p>
+            </div>
+            <div class="skill-group">
+              <span class="skills-label">Application security</span>
+              <p>Secure authentication, input validation, Burp Suite, Wireshark, nmap, CTF design</p>
+            </div>
+            <div class="skill-group">
+              <span class="skills-label">Systems &amp; networking</span>
+              <p>Linux/Bash, Git/GitHub, TCP/IP, Starlink deployment, Python, Java</p>
+            </div>
+          </section>
+
+          <section>
+            <h2>Education</h2>
+            <div class="education">
+              <h3>Senior High School</h3>
+              <p>ICT — Computer Systems Servicing (CS8)</p>
+              <p class="footer-note">
+                Coursework in computer hardware, software installation,
+                networking, and security.
+              </p>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </article>
+  </body>
+</html>

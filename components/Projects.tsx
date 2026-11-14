@@ -1,159 +1,73 @@
 import Image from "next/image";
 
 type Project = {
-  icon: string;
-  tag: string;
+  category: string;
+  badge?: string;
   title: string;
   description: string;
+  result: string;
   tags: string[];
-  links: { label: string; href: string; download?: boolean }[];
-  image?: string;
+  links: { label: string; href: string; primary?: boolean }[];
+  image?: { src: string; alt: string };
 };
 
 const projects: Project[] = [
   {
-    icon: "🎓",
-    tag: "Full-Stack · Next.js + Supabase",
-    title: "F1 STACKMIND Cyber Academy — Cybersecurity Training Platform",
+    category: "Full-stack · Team project",
+    badge: "PHINMA AI Builder Workshop · 2026 Champion",
+    title: "Dugtong — OJT Hour Tracker",
     description:
-      "A live mentor-and-mentee learning platform for an 8-week cybersecurity program. Mentees read weekly lessons, take anti-copy timed quizzes scored entirely on the server, mark attendance, and send feedback reports; mentors publish content, build quizzes, review mentee performance, resolve feedback, and read a full audit log. Deployed on Vercel with a Supabase backend (Postgres with Row Level Security on every table, OTP-verified accounts, MENTOR access-code signup, rate limiting, CSP/HSTS headers, and an 8-layer security model).",
-    tags: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "RLS", "Tailwind", "Zod", "Vercel"],
+      "Replaces paper OJT records with student hour submissions, coordinator approvals, and printable reports. Built by the champion team at the PHINMA AI Builder Workshop and deployed with Supabase.",
+    result: "Award-winning team project · live deployment",
+    tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "Role-based access"],
+    image: {
+      src: "/projects/dugtong-hero.jpg",
+      alt: "Dugtong OJT platform landing page and student time-tracking dashboard",
+    },
+    links: [
+      { label: "GitHub", href: "https://github.com/Universal43A2z/DugtongOJT" },
+      { label: "Live App", href: "https://dugtong-ojt.vercel.app", primary: true },
+    ],
+  },
+  {
+    category: "Full-stack · Cybersecurity education",
+    title: "F1 STACKMIND Cyber Academy",
+    description:
+      "A live platform for an 8-week cybersecurity mentoring program. It brings weekly lessons, server-scored timed quizzes, attendance, mentor review, and audit logs into one workflow.",
+    result: "8-week program · mentor and mentee workflows",
+    tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL RLS", "Zod"],
+    image: {
+      src: "/projects/cyber-academy-hero.jpg",
+      alt: "F1 STACKMIND Cyber Academy landing page and training capabilities",
+    },
     links: [
       { label: "GitHub", href: "https://github.com/Universal43A2z/cyber-academy" },
-      { label: "Live App", href: "https://cyber-academy-sooty.vercel.app" },
+      { label: "Live App", href: "https://cyber-academy-sooty.vercel.app", primary: true },
     ],
   },
   {
-    icon: "🧩",
-    tag: "Vanilla JS · Engine",
-    title: "Workflow Runner — No-Code Workflow Engine",
-    description:
-      "Design workflows in YAML or JSON and run them on an event-driven engine built with pure JavaScript and Vite. Features a state machine (running/paused/done), typed HTTP steps, delays, a hand-written YAML parser, live step-by-step run log, and a mock API client — fully unit-tested with Vitest. Ships with a sample 'Security Alert Response' workflow.",
-    tags: ["JavaScript", "Vite", "State Machine", "YAML", "Events", "Vitest"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/yourusername/vanilla-workflow-editor",
-      },
-    ],
-  },
-  {
-    icon: "🏴",
-    tag: "Full-Stack",
+    category: "Security · Full-stack",
     title: "Cyber CTF Platform",
     description:
-      "Full-stack Capture The Flag platform with 58 challenges across 6 categories — cryptography, forensics, OSINT, and web exploitation. Includes secure auth (bcrypt, CSRF, rate limiting, account lockout), downloadable challenge files, and a leaderboard admin panel.",
-    tags: ["Node.js", "Express", "EJS", "Helmet", "bcrypt"],
+      "A hands-on Capture The Flag platform with challenges across cryptography, forensics, OSINT, and web security, plus challenge downloads and a leaderboard admin panel.",
+    result: "58 challenges · 6 categories",
+    tags: ["Node.js", "Express", "bcrypt", "CSRF protection", "Rate limiting"],
     links: [
-      { label: "GitHub", href: "https://github.com/yourusername/ctf-project" },
+      { label: "GitHub", href: "https://github.com/Universal43A2z/ctf-project", primary: true },
     ],
   },
   {
-    icon: "🛡️",
-    tag: "Security Program",
-    title: "Cyber Security Awareness Program",
+    category: "TypeScript · Developer tooling",
+    title: "Workflow Runner — No-Code Workflow Engine",
     description:
-      "Designed a month-long campus cyber security awareness initiative — program proposal, Knowledge Day & Skills Day schedules, interactive sessions, and slide decks on phishing, password hygiene, and safe browsing.",
-    tags: ["Program Design", "Presentations", "Security Awareness"],
+      "A TypeScript engine for defining and running YAML or JSON workflows. Includes typed HTTP and delay steps, a step-by-step run log, an authenticated REST API, Docker support, and Vitest tests.",
+    result: "YAML/JSON workflows · Docker and CI",
+    tags: ["TypeScript", "REST API", "State machine", "Docker", "Vitest"],
     links: [
       {
         label: "GitHub",
-        href: "https://github.com/yourusername/cyber-awareness-program",
-      },
-    ],
-  },
-  {
-    icon: "⚙️",
-    tag: "Backend",
-    title: "Node.js Server Practice",
-    description:
-      "Hands-on Node.js exercises: an HTTP server with routing and 404 handling, plus filesystem scripts for reading and writing data — the fundamentals of server-side JavaScript.",
-    tags: ["Node.js", "HTTP", "File System"],
-    links: [
-      { label: "GitHub", href: "https://github.com/yourusername/nodejs-practice" },
-    ],
-  },
-  {
-    icon: "🗄️",
-    tag: "Database",
-    title: "Advanced Database Module",
-    description:
-      "Modular Node.js program demonstrating student records with modules, callbacks, arrays, objects, and control flow — applying database concepts in real JavaScript code.",
-    tags: ["Node.js", "Modules", "Callbacks", "OOP"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/yourusername/advanced-database-module",
-      },
-    ],
-  },
-  {
-    icon: "📡",
-    tag: "Python · Security",
-    title: "NetRecon v2 — Reconnaissance Framework",
-    description:
-      "Powerful, dependency-free network recon framework. Expands CIDR blocks and ranges, discovers live hosts, scans ports with profiles, fingerprints services/TLS, grades HTTP security headers (A–F), guesses OS from TTL, runs traceroute, and exports JSON/CSV/HTML reports.",
-    tags: ["Python", "CIDR", "Service Detection", "TLS", "HTTP Audit", "Reporting"],
-    links: [
-      { label: "GitHub", href: "https://github.com/yourusername/netrecon" },
-      {
-        label: "Download",
-        href: "/projects/python-network-scanner/netrecon.py",
-        download: true,
-      },
-    ],
-  },
-  {
-    icon: "🔑",
-    tag: "Python · Security",
-    title: "PassAudit — Password Auditor",
-    description:
-      "Identity-security tool that scores password strength (entropy, pattern detection, crack-time estimate) and performs authorized dictionary attacks against MD5/SHA1/SHA256/SHA512 hashes using leetspeak and suffix mutation rules. Batch-audits password files with JSON export.",
-    tags: ["Python", "Hashing", "Entropy", "Dictionary Attack", "Regex"],
-    links: [
-      { label: "GitHub", href: "https://github.com/yourusername/passaudit" },
-      {
-        label: "Download",
-        href: "/projects/python-password-auditor/passaudit.py",
-        download: true,
-      },
-    ],
-  },
-  {
-    icon: "☕",
-    tag: "Java · GUI + Backend",
-    title: "BankSystem — Banking Engine + Swing GUI",
-    description:
-      "Concurrent retail-banking engine with a desktop Swing GUI and a CLI. Open accounts, deposit, withdraw, and transfer money while an immutable audit ledger updates live — then run a stress test that proves the totals still balance under load. Exact integer money math and deadlock-free lock ordering.",
-    tags: ["Java", "Swing GUI", "Concurrency", "Records", "Audit Trail"],
-    image: "/projects/java-bank-system/screenshot.png",
-    links: [
-      { label: "GitHub", href: "https://github.com/yourusername/bank-system" },
-      {
-        label: "GUI",
-        href: "/projects/java-bank-system/BankSystemGui.java",
-        download: true,
-      },
-      {
-        label: "CLI",
-        href: "/projects/java-bank-system/BankSystem.java",
-        download: true,
-      },
-    ],
-  },
-  {
-    icon: "🌐",
-    tag: "Java · REST API",
-    title: "TaskAPI — Dependency-Free REST API",
-    description:
-      "REST API built on the JDK's built-in HTTP server — no frameworks or dependencies. Full CRUD with correct status codes, a hand-written recursive-descent JSON parser, thread-pooled handling, CORS, request logging, validation, and file-backed persistence across restarts.",
-    tags: ["Java", "REST", "HTTP", "JSON", "Concurrency", "Persistence"],
-    links: [
-      { label: "GitHub", href: "https://github.com/yourusername/task-api" },
-      {
-        label: "Download",
-        href: "/projects/java-rest-api/TaskApi.java",
-        download: true,
+        href: "https://github.com/Universal43A2z/vanilla-workflow-edito",
+        primary: true,
       },
     ],
   },
@@ -161,64 +75,84 @@ const projects: Project[] = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="scroll-mt-24 py-20">
       <div className="mx-auto max-w-[1080px] px-6">
-        <p className="font-mono text-sm text-accent">{"// projects"}</p>
-        <h2 className="mt-2 mb-9 text-3xl font-extrabold">Featured Work</h2>
+        <div className="mb-9 max-w-3xl">
+          <p className="mb-3 font-mono text-xs font-semibold tracking-[0.16em] text-accent">
+            SELECTED WORK
+          </p>
+          <h2 className="text-3xl font-extrabold md:text-4xl">
+            Projects built to solve real problems.
+          </h2>
+          <p className="mt-3 leading-relaxed text-muted">
+            A mix of shipped products, security-focused learning tools, and
+            engineering systems. Each project links to its source or live demo.
+          </p>
+        </div>
         <div className="grid gap-6 md:grid-cols-2">
           {projects.map((project) => (
             <article
               key={project.title}
-              className="flex flex-col rounded-xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-accent-dim"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-accent-dim focus-within:border-accent-dim"
             >
               {project.image && (
-                <a href={project.image} target="_blank" rel="noreferrer">
+                <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-bg-alt">
                   <Image
-                    src={project.image}
-                    alt={`${project.title} screenshot`}
-                    width={940}
-                    height={643}
-                    className="mb-4 block h-[180px] w-full rounded-lg border border-border object-cover object-top hover:opacity-85"
+                    src={project.image.src}
+                    alt={project.image.alt}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                   />
-                </a>
+                </div>
               )}
-              <div className="mb-3.5 flex items-center justify-between">
-                <span className="text-[1.6rem]">{project.icon}</span>
-                <span className="rounded-full border border-accent-dim px-2.5 py-1 font-mono text-xs text-accent">
-                  {project.tag}
-                </span>
-              </div>
-              <h3 className="mb-2.5 text-xl font-bold">{project.title}</h3>
-              <p className="mb-4 flex-grow text-sm leading-relaxed text-muted">
-                {project.description}
-              </p>
-              <div className="mb-4 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded border border-border bg-bg-alt px-2.5 py-1 font-mono text-xs text-muted"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-2.5">
-                {project.links.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    download={link.download}
-                    target={link.download ? undefined : "_blank"}
-                    rel={link.download ? undefined : "noreferrer"}
-                    className={
-                      link.download
-                        ? "rounded-md border border-border px-4 py-2 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent"
-                        : "rounded-md bg-accent px-4 py-2 text-sm font-semibold text-[#06211a] transition-colors hover:bg-accent-dim"
-                    }
-                  >
-                    {link.label}
-                  </a>
-                ))}
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+                  <p className="font-mono text-xs font-semibold tracking-wide text-accent">
+                    {project.category}
+                  </p>
+                  {project.badge && (
+                    <span className="rounded-full border border-accent-dim bg-accent/10 px-3 py-1 font-mono text-xs font-semibold text-accent">
+                      {project.badge}
+                    </span>
+                  )}
+                </div>
+                <h3 className="text-xl font-bold leading-snug">
+                  {project.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {project.description}
+                </p>
+                <p className="mt-4 text-sm font-semibold text-text">
+                  {project.result}
+                </p>
+                <ul className="mt-4 flex flex-wrap gap-2" aria-label="Technologies">
+                  {project.tags.map((tag) => (
+                    <li
+                      key={tag}
+                      className="rounded-md border border-border bg-bg-alt px-2.5 py-1 font-mono text-xs text-muted"
+                    >
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto flex flex-wrap gap-2.5 pt-6">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={
+                        link.primary
+                          ? "rounded-md bg-accent px-4 py-2 text-sm font-semibold text-[#06211a] transition-colors hover:bg-accent-dim"
+                          : "rounded-md border border-border px-4 py-2 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent"
+                      }
+                    >
+                      {link.label} <span aria-hidden="true">↗</span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </article>
           ))}

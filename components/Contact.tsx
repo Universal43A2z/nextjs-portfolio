@@ -1,16 +1,20 @@
 export function Contact() {
   return (
-    <section id="contact" className="py-20">
-      <div className="mx-auto max-w-[1080px] px-6 text-center">
-        <p className="font-mono text-sm text-accent">{"// contact"}</p>
-        <h2 className="mt-2 mb-4 text-3xl font-extrabold">Let&apos;s Connect</h2>
-        <p className="mb-7 text-muted">
-          Have a project idea or want to collaborate on security research? Reach
-          out.
+    <section id="contact" className="scroll-mt-24 py-20">
+      <div className="mx-auto max-w-[760px] px-6 text-center">
+        <p className="mb-3 font-mono text-xs font-semibold tracking-[0.16em] text-accent">
+          GET IN TOUCH
         </p>
-        <div className="mb-5 flex flex-wrap justify-center gap-4">
+        <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
+          Let&apos;s talk about what you&apos;re building.
+        </h2>
+        <p className="mx-auto mb-8 max-w-2xl leading-relaxed text-muted">
+          For hiring conversations, web development projects, or cybersecurity
+          training collaboration, email is the best way to reach me.
+        </p>
+        <div className="mb-6 flex flex-wrap justify-center gap-3">
           <a
-            href="mailto:amorkhentvincent@gmail.com"
+            href="mailto:amorkhentvincent@gmail.com?subject=Portfolio%20inquiry"
             className="rounded-lg bg-accent px-6 py-3 font-semibold text-[#06211a] transition-all hover:-translate-y-0.5 hover:bg-accent-dim"
           >
             Email Me
@@ -23,16 +27,16 @@ export function Contact() {
             Download Resume
           </a>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Universal43A2z"
             target="_blank"
             rel="noreferrer"
             className="rounded-lg border border-border px-6 py-3 font-semibold text-text transition-colors hover:border-accent hover:text-accent"
           >
-            GitHub
+            GitHub <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <p className="font-mono text-xs text-[#5a6180]">
-          amorkhentvincent@gmail.com · 0921 352 3734 · github.com/yourusername
+        <p className="font-mono text-sm text-muted">
+          amorkhentvincent@gmail.com · Iloilo City, Philippines
         </p>
       </div>
     </section>
