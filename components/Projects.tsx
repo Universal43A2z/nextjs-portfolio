@@ -65,8 +65,18 @@ const projects: Project[] = [
       "A two-branch Gonzaga Dental Clinic Management Automation System scaffold for patient intake, treatment and consent records, legacy-chart images, and scheduling. Role- and branch-scoped access uses PostgreSQL Row-Level Security. It uses placeholder clinic data and has not been approved for clinical use.",
     result: "Placeholder clinic data · not approved for clinical use",
     tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL RLS", "Zod", "Audit logging"],
-    links: [],
-    accessNote: "Private repository · source details available on request.",
+    image: {
+      src: "/projects/gdcmas-hero.jpg",
+      alt: "GDCMAS public landing page describing a shared clinic record across two branches",
+    },
+    links: [
+      {
+        label: "Live Site",
+        href: "https://gonzaga-dental-clinic-sys-git-b07a52-frgagalveui-8327s-projects.vercel.app/",
+        primary: true,
+      },
+    ],
+    accessNote: "Source repository is private; this link opens the public landing site.",
   },
 ];
 
