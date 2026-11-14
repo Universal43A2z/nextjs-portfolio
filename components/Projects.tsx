@@ -97,9 +97,10 @@ export function Projects() {
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <article
               key={project.title}
+              data-reveal-order={index}
               className="scroll-reveal motion-card group flex flex-col overflow-hidden rounded-2xl border border-border bg-card"
             >
               {project.image && (
@@ -153,11 +154,11 @@ export function Projects() {
                         rel="noreferrer"
                         className={
                           link.primary
-                            ? "rounded-md bg-accent px-4 py-2 text-sm font-semibold text-[#06211a] transition-colors hover:bg-accent-dim"
-                            : "rounded-md border border-border px-4 py-2 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent"
+                            ? "cta-button rounded-md bg-accent px-4 py-2 text-sm font-semibold text-[#06211a] hover:bg-accent-dim"
+                            : "cta-button rounded-md border border-border px-4 py-2 text-sm font-semibold text-text hover:border-accent hover:text-accent"
                         }
                       >
-                        {link.label} <span aria-hidden="true">↗</span>
+                        {link.label} <span className="cta-arrow" aria-hidden="true">↗</span>
                       </a>
                     ))}
                   </div>

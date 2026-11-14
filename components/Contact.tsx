@@ -15,14 +15,14 @@ export function Contact() {
         <div className="mb-6 flex flex-wrap justify-center gap-3">
           <a
             href="mailto:amorkhentvincent@gmail.com?subject=Portfolio%20inquiry"
-            className="rounded-lg bg-accent px-6 py-3 font-semibold text-[#06211a] transition-all hover:-translate-y-0.5 hover:bg-accent-dim"
+            className="cta-button rounded-lg bg-accent px-6 py-3 font-semibold text-[#06211a] hover:bg-accent-dim"
           >
-            Email Me
+            Email Me <span className="cta-arrow" aria-hidden="true">→</span>
           </a>
           <a
             href="/resume.pdf"
             download
-            className="rounded-lg border border-border px-6 py-3 font-semibold text-text transition-colors hover:border-accent hover:text-accent"
+            className="cta-button rounded-lg border border-border px-6 py-3 font-semibold text-text hover:border-accent hover:text-accent"
           >
             Download Resume
           </a>
@@ -30,9 +30,9 @@ export function Contact() {
             href="https://github.com/Universal43A2z"
             target="_blank"
             rel="noreferrer"
-            className="rounded-lg border border-border px-6 py-3 font-semibold text-text transition-colors hover:border-accent hover:text-accent"
+            className="cta-button rounded-lg border border-border px-6 py-3 font-semibold text-text hover:border-accent hover:text-accent"
           >
-            GitHub <span aria-hidden="true">↗</span>
+            GitHub <span className="cta-arrow" aria-hidden="true">↗</span>
           </a>
         </div>
         <p className="font-mono text-sm text-muted">

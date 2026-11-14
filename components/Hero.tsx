@@ -24,14 +24,14 @@ export function Hero() {
           <div className="hero-enter hero-enter-5 mt-8 flex flex-wrap gap-3">
             <a
               href="#projects"
-              className="rounded-lg bg-accent px-5 py-3 font-semibold text-[#06211a] transition-colors hover:bg-accent-dim"
+              className="cta-button rounded-lg bg-accent px-5 py-3 font-semibold text-[#06211a] hover:bg-accent-dim"
             >
-              Explore My Work
+              Explore My Work <span className="cta-arrow" aria-hidden="true">→</span>
             </a>
             <a
               href="/resume.pdf"
               download
-              className="rounded-lg border border-border px-5 py-3 font-semibold text-text transition-colors hover:border-accent hover:text-accent"
+              className="cta-button rounded-lg border border-border px-5 py-3 font-semibold text-text hover:border-accent hover:text-accent"
             >
               Download Resume
             </a>
@@ -79,9 +79,9 @@ export function Hero() {
             href="https://dugtong-ojt.vercel.app"
             target="_blank"
             rel="noreferrer"
-            className="mt-6 inline-flex items-center gap-2 font-semibold text-accent transition-colors hover:text-text"
+            className="cta-button mt-6 font-semibold text-accent hover:text-text"
           >
-            See the live project <span aria-hidden="true">↗</span>
+            See the live project <span className="cta-arrow" aria-hidden="true">↗</span>
           </a>
         </aside>
       </div>
