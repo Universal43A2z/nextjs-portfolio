@@ -28,5 +28,6 @@ npm run build
 
 - Page sections live in `components/`.
 - The profile photo and project screenshots live in `public/`.
+- The GDCMAS portfolio entry is a private, unapproved development prototype with placeholder clinic data; it is not for clinical use.
 - The downloadable résumé is `public/resume.pdf`; its editable HTML source is `resume/resume.html`.
 - Regenerate the PDF with `python scripts/render_resume.py` (requires Python Playwright and Chromium).

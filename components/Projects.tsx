@@ -8,6 +8,7 @@ type Project = {
   result: string;
   tags: string[];
   links: { label: string; href: string; primary?: boolean }[];
+  accessNote?: string;
   image?: { src: string; alt: string };
 };
 
@@ -57,19 +58,15 @@ const projects: Project[] = [
     ],
   },
   {
-    category: "TypeScript · Developer tooling",
-    title: "Workflow Runner — No-Code Workflow Engine",
+    category: "Full-stack · Healthcare operations",
+    badge: "Development prototype",
+    title: "GDCMAS — Dental Clinic Management System",
     description:
-      "A TypeScript engine for defining and running YAML or JSON workflows. Includes typed HTTP and delay steps, a step-by-step run log, an authenticated REST API, Docker support, and Vitest tests.",
-    result: "YAML/JSON workflows · Docker and CI",
-    tags: ["TypeScript", "REST API", "State machine", "Docker", "Vitest"],
-    links: [
-      {
-        label: "GitHub",
-        href: "https://github.com/Universal43A2z/vanilla-workflow-edito",
-        primary: true,
-      },
-    ],
+      "A two-branch Gonzaga Dental Clinic Management Automation System scaffold for patient intake, treatment and consent records, legacy-chart images, and scheduling. Role- and branch-scoped access uses PostgreSQL Row-Level Security. It uses placeholder clinic data and has not been approved for clinical use.",
+    result: "Placeholder clinic data · not approved for clinical use",
+    tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL RLS", "Zod", "Audit logging"],
+    links: [],
+    accessNote: "Private repository · source details available on request.",
   },
 ];
 
@@ -86,7 +83,7 @@ export function Projects() {
           </h2>
           <p className="mt-3 leading-relaxed text-muted">
             A mix of shipped products, security-focused learning tools, and
-            engineering systems. Each project links to its source or live demo.
+            engineering systems. Source access is noted where a repository is private.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
@@ -136,23 +133,29 @@ export function Projects() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-auto flex flex-wrap gap-2.5 pt-6">
-                  {project.links.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={
-                        link.primary
-                          ? "rounded-md bg-accent px-4 py-2 text-sm font-semibold text-[#06211a] transition-colors hover:bg-accent-dim"
-                          : "rounded-md border border-border px-4 py-2 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent"
-                      }
-                    >
-                      {link.label} <span aria-hidden="true">↗</span>
-                    </a>
-                  ))}
-                </div>
+                {project.links.length > 0 ? (
+                  <div className="mt-auto flex flex-wrap gap-2.5 pt-6">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={
+                          link.primary
+                            ? "rounded-md bg-accent px-4 py-2 text-sm font-semibold text-[#06211a] transition-colors hover:bg-accent-dim"
+                            : "rounded-md border border-border px-4 py-2 text-sm font-semibold text-text transition-colors hover:border-accent hover:text-accent"
+                        }
+                      >
+                        {link.label} <span aria-hidden="true">↗</span>
+                      </a>
+                    ))}
+                  </div>
+                ) : project.accessNote ? (
+                  <p className="mt-auto pt-6 text-sm font-semibold text-muted">
+                    {project.accessNote}
+                  </p>
+                ) : null}
               </div>
             </article>
           ))}
