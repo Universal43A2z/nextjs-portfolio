@@ -84,7 +84,7 @@ export function Projects() {
   return (
     <section id="projects" className="scroll-mt-24 py-20">
       <div className="mx-auto max-w-[1080px] px-6">
-        <div className="mb-9 max-w-3xl">
+        <div className="scroll-reveal mb-9 max-w-3xl">
           <p className="mb-3 font-mono text-xs font-semibold tracking-[0.16em] text-accent">
             SELECTED WORK
           </p>
@@ -100,7 +100,7 @@ export function Projects() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-accent-dim focus-within:border-accent-dim"
+              className="scroll-reveal motion-card group flex flex-col overflow-hidden rounded-2xl border border-border bg-card"
             >
               {project.image && (
                 <div className="relative aspect-[16/9] overflow-hidden border-b border-border bg-bg-alt">

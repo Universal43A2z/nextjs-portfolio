@@ -32,7 +32,7 @@ export function About() {
   return (
     <section id="about" className="scroll-mt-24 py-20">
       <div className="mx-auto max-w-[1080px] px-6">
-        <div className="mb-10 max-w-3xl">
+        <div className="scroll-reveal mb-10 max-w-3xl">
           <p className="mb-3 font-mono text-xs font-semibold tracking-[0.16em] text-accent">
             PROFILE
           </p>
@@ -52,7 +52,7 @@ export function About() {
             {strengths.map((strength) => (
               <article
                 key={strength.title}
-                className="rounded-xl border border-border bg-card p-5"
+                className="scroll-reveal motion-card rounded-xl border border-border bg-card p-5"
               >
                 <h3 className="font-bold">{strength.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -62,7 +62,7 @@ export function About() {
             ))}
           </div>
 
-          <aside className="flex flex-col gap-5">
+          <aside className="scroll-reveal flex flex-col gap-5">
             <div className="flex w-full items-center justify-center">
               <Image
                 src="/photo.png"

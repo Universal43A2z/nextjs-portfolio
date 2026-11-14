@@ -1,23 +1,27 @@
 export function Hero() {
   return (
-    <header id="home" className="border-b border-border py-16 md:py-24">
-      <div className="mx-auto grid max-w-[1080px] items-center gap-10 px-6 md:grid-cols-[1.1fr_0.9fr] md:gap-14">
+    <header
+      id="home"
+      className="hero-shell border-b border-border py-16 md:py-24"
+    >
+      <div className="hero-content mx-auto grid max-w-[1080px] items-center gap-10 px-6 md:grid-cols-[1.1fr_0.9fr] md:gap-14">
         <div>
-          <p className="mb-5 inline-flex rounded-full border border-accent-dim bg-accent/10 px-3 py-1 font-mono text-xs font-semibold text-accent">
+          <p className="hero-enter hero-enter-1 mb-5 inline-flex rounded-full border border-accent-dim bg-accent/10 px-3 py-1 font-mono text-xs font-semibold text-accent">
+            <span className="pulse-dot mr-2 size-1.5 rounded-full bg-accent" aria-hidden="true" />
             FULL-STACK DEVELOPMENT · SECURITY FOCUS
           </p>
-          <h1 className="text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
+          <h1 className="hero-enter hero-enter-2 text-4xl font-extrabold leading-tight tracking-tight md:text-5xl">
             Hi, I&apos;m <span className="text-accent">Khent Vincent C. Amor</span>
           </h1>
-          <p className="mt-5 max-w-[560px] text-xl font-semibold leading-snug text-text">
+          <p className="hero-enter hero-enter-3 mt-5 max-w-[560px] text-xl font-semibold leading-snug text-text">
             I build useful web products with security in mind.
           </p>
-          <p className="mt-3 max-w-[560px] text-base leading-relaxed text-muted md:text-lg">
+          <p className="hero-enter hero-enter-4 mt-3 max-w-[560px] text-base leading-relaxed text-muted md:text-lg">
             Full-stack developer working across React, Next.js, Node.js, and
             PostgreSQL—with hands-on experience in cybersecurity training and
             network deployment.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="hero-enter hero-enter-5 mt-8 flex flex-wrap gap-3">
             <a
               href="#projects"
               className="rounded-lg bg-accent px-5 py-3 font-semibold text-[#06211a] transition-colors hover:bg-accent-dim"
@@ -36,13 +40,13 @@ export function Hero() {
             href="https://github.com/Universal43A2z"
             target="_blank"
             rel="noreferrer"
-            className="mt-5 inline-block font-mono text-sm text-muted transition-colors hover:text-accent"
+            className="hero-enter hero-enter-6 mt-5 inline-block font-mono text-sm text-muted transition-colors hover:text-accent"
           >
             GitHub: Universal43A2z ↗
           </a>
         </div>
 
-        <aside className="rounded-2xl border border-border bg-card p-6 shadow-[0_24px_60px_rgba(0,0,0,0.28)] md:p-7">
+        <aside className="hero-feature-card rounded-2xl border border-border bg-card p-6 shadow-[0_24px_60px_rgba(0,0,0,0.28)] md:p-7">
           <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
             <p className="font-mono text-xs font-semibold tracking-[0.14em] text-accent">
               RECENT RECOGNITION

@@ -56,17 +56,17 @@ export function Skills() {
       className="scroll-mt-24 border-y border-border bg-bg-alt py-20"
     >
       <div className="mx-auto max-w-[1080px] px-6">
-        <p className="mb-3 font-mono text-xs font-semibold tracking-[0.16em] text-accent">
+        <p className="scroll-reveal mb-3 font-mono text-xs font-semibold tracking-[0.16em] text-accent">
           CAPABILITIES
         </p>
-        <h2 className="mb-9 text-3xl font-extrabold md:text-4xl">
+        <h2 className="scroll-reveal mb-9 text-3xl font-extrabold md:text-4xl">
           Tools I use to deliver
         </h2>
         <div className="grid gap-[18px] md:grid-cols-2">
           {skills.map((skill) => (
             <div
               key={skill.title}
-              className="rounded-xl border border-border bg-card p-5 sm:p-6"
+              className="scroll-reveal motion-card rounded-xl border border-border bg-card p-5 sm:p-6"
             >
               <h3 className="mb-4 text-base font-bold">{skill.title}</h3>
               <ul className="flex flex-wrap gap-2">

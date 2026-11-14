@@ -1,7 +1,7 @@
 export function Contact() {
   return (
     <section id="contact" className="scroll-mt-24 py-20">
-      <div className="mx-auto max-w-[760px] px-6 text-center">
+      <div className="scroll-reveal mx-auto max-w-[760px] px-6 text-center">
         <p className="mb-3 font-mono text-xs font-semibold tracking-[0.16em] text-accent">
           GET IN TOUCH
         </p>
