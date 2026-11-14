@@ -49,19 +49,19 @@ export function About() {
           </div>
 
           <aside className="scroll-reveal rounded-2xl border border-border bg-card p-5 shadow-[0_16px_48px_rgba(0,0,0,0.2)] sm:p-6">
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col items-center text-center">
               <Image
                 src="/photo.png"
                 alt="Portrait of Khent Vincent C. Amor"
                 width={320}
                 height={320}
-                className="size-24 shrink-0 rounded-full border border-border object-cover object-center sm:size-28"
+                className="size-40 rounded-full border border-border object-cover object-center shadow-[0_12px_36px_rgba(0,0,0,0.25)] md:size-36 lg:size-40"
               />
-              <div className="min-w-0">
+              <div className="mt-4">
                 <p className="font-mono text-xs font-semibold tracking-[0.12em] text-accent">
                   PORTFOLIO
                 </p>
-                <h3 className="mt-1 text-lg font-bold leading-snug">
+                <h3 className="mt-1 text-xl font-bold leading-snug">
                   Khent Vincent C. Amor
                 </h3>
                 <p className="mt-1 text-sm leading-relaxed text-muted">
